@@ -24,13 +24,13 @@ export PATH=/sbin:/usr/sbin:$PATH:$CACHE_DIR/.tools/unzip/bin
 
 echo "-----> Fetching and installing unzip"
 cd $UNZIP_BUILD
-curl -OL http://downloads.sourceforge.net/infozip/unzip552.tar.gz
-tar zxvf unzip552.tar.gz
-cd unzip-5.52
+curl -o unzip60.tar.gz -L http://sourceforge.net/projects/infozip/files/UnZip%206.x%20%28latest%29/UnZip%206.0/unzip60.tar.gz/download
+tar zxvf unzip60.tar.gz
+cd unzip60
 cp unix/Makefile .
 make generic
 echo "unzip installed" | indent
 
 cd $BUILD_DIR
 mkdir -p $BUILD_DIR/bin
-cp $UNZIP_BUILD/unzip-5.52/unzip $BUILD_DIR/bin
+cp $UNZIP_BUILD/unzip60/unzip $BUILD_DIR/bin
